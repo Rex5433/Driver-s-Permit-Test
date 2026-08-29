@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A focused Indiana learner's permit study page based on the Indiana BMV Driver's Manual." />
+  <title>Indiana Permit Study Desk</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Indiana Permit Study Desk home">
+      <span class="brand-mark">IN</span>
+      <span>
+        <strong>Permit Study Desk</strong>
+        <small>Indiana · Learner's Permit</small>
+      </span>
+    </a>
+
+    <nav class="primary-nav" aria-label="Primary navigation">
+      <a href="#study">Study</a>
+      <a href="#signs">Signs</a>
+      <a href="#reference">Reference</a>
+      <a href="#practice">Practice Test</a>
+    </nav>
+
+    <button class="quiet-button" id="resetProgress" type="button">Reset progress</button>
+  </header>
+
+  <main id="top">
+    <section class="hero shell">
+      <div class="hero-copy">
+        <p class="eyebrow">Indiana BMV · Permit Preparation</p>
+        <h1>Study what matters.<br><span>Know why it matters.</span></h1>
+        <p class="hero-lede">
+          A focused review of Indiana traffic signs, road rules, safe-driving practices, and exam essentials—organized for quick study instead of endless scrolling through a manual.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#practice">Start a practice test</a>
+          <a class="button secondary" href="#study">Review study modules</a>
+        </div>
+        <p class="source-note">Content checked against the Indiana BMV Driver's Manual and knowledge-exam guidance · August 2026.</p>
+      </div>
+
+      <aside class="exam-panel" aria-label="Exam overview">
+        <div class="panel-label">Exam standard</div>
+        <div class="score-row">
+          <strong>80%</strong>
+          <span>or higher on each exam component</span>
+        </div>
+        <dl class="exam-facts">
+          <div><dt>Format</dt><dd>Multiple choice</dd></div>
+          <div><dt>Components</dt><dd>Signs + traffic rules</dd></div>
+          <div><dt>Retake after failure</dt><dd>Next business day</dd></div>
+          <div><dt>Appointment</dt><dd>Not normally required</dd></div>
+        </dl>
+        <a class="text-link" href="https://www.in.gov/bmv/licenses-permits-ids/learners-permits-and-drivers-licenses-overview/learners-permit/knowledge-exam" target="_blank" rel="noopener">Open official BMV exam guidance ↗</a>
+      </aside>
+    </section>
+
+    <section class="progress-strip" aria-label="Study progress">
+      <div class="shell progress-grid">
+        <div>
+          <span class="metric-label">Modules reviewed</span>
+          <strong id="moduleCount">0 / 4</strong>
+        </div>
+        <div>
+          <span class="metric-label">Best practice score</span>
+          <strong id="bestScore">—</strong>
+        </div>
+        <div>
+          <span class="metric-label">Sign recall</span>
+          <strong id="signProgress">0 / 8</strong>
+        </div>
+        <div class="progress-line-wrap">
+          <span class="metric-label">Overall study progress</span>
+          <div class="progress-line" aria-hidden="true"><span id="overallBar"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="study">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">01 · Core material</p>
+          <h2>Study modules</h2>
+        </div>
+        <p>Mark a module reviewed once you can explain the ideas without looking at the answers.</p>
+      </div>
+
+      <div class="module-grid">
+        <article class="module-card" data-module="signs-signals">
+          <div class="module-index">01</div>
+          <p class="module-kicker">Chapter 6 focus</p>
+          <h3>Signs & signals</h3>
+          <p>Learn meaning from color and shape first. It lets you identify unfamiliar signs before you read a single word.</p>
+          <ul>
+            <li>Regulatory vs. warning signs</li>
+            <li>Sign colors and shapes</li>
+            <li>Traffic lights and arrows</li>
+            <li>Railroad and school-zone signs</li>
+          </ul>
+          <button class="module-toggle" type="button">Mark reviewed</button>
+        </article>
+
+        <article class="module-card" data-module="road-rules">
+          <div class="module-index">02</div>
+          <p class="module-kicker">Chapters 6–7 focus</p>
+          <h3>Road rules</h3>
+          <p>Prioritize right-of-way, turning, lane use, passing, posted speeds, parking limits, and railroad crossings.</p>
+          <ul>
+            <li>Common Indiana speed limits</li>
+            <li>Turning and lane positioning</li>
+            <li>Passing restrictions</li>
+            <li>Parking restrictions</li>
+          </ul>
+          <button class="module-toggle" type="button">Mark reviewed</button>
+        </article>
+
+        <article class="module-card" data-module="safe-driving">
+          <div class="module-index">03</div>
+          <p class="module-kicker">Chapter 7 focus</p>
+          <h3>Safe operation</h3>
+          <p>The exam tests judgment, not just numbers. Know how following distance, visibility, weather, and other road users change your choices.</p>
+          <ul>
+            <li>2–3 second following rule</li>
+            <li>School buses and bicycles</li>
+            <li>Work zones and move-over rules</li>
+            <li>Night and bad-weather driving</li>
+          </ul>
+          <button class="module-toggle" type="button">Mark reviewed</button>
+        </article>
+
+        <article class="module-card" data-module="emergencies">
+          <div class="module-index">04</div>
+          <p class="module-kicker">Chapter 8 focus</p>
+          <h3>Emergencies & responsibility</h3>
+          <p>Review what to do when traffic stops being predictable: collisions, vehicle failures, emergency vehicles, and law-enforcement directions.</p>
+          <ul>
+            <li>Collision response priorities</li>
+            <li>Emergency vehicles</li>
+            <li>Equipment failures</li>
+            <li>Officer directions override signals</li>
+          </ul>
+          <button class="module-toggle" type="button">Mark reviewed</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="section shell" id="signs">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">02 · Visual recall</p>
+          <h2>Sign shape drill</h2>
+        </div>
+        <p>Click a card to reveal the meaning. Shape recognition is one of the fastest points to lock in.</p>
+      </div>
+
+      <div class="sign-grid" id="signGrid">
+        <button class="sign-card" type="button" data-sign="octagon">
+          <span class="sign-visual octagon"><span>STOP</span></span>
+          <span class="sign-title">Eight-sided</span>
+          <span class="sign-answer">Stop and yield the appropriate right-of-way.</span>
+        </button>
+        <button class="sign-card" type="button" data-sign="triangle">
+          <span class="sign-visual triangle"><span>YIELD</span></span>
+          <span class="sign-title">Equilateral triangle</span>
+          <span class="sign-answer">Slow down and be prepared to stop to yield.</span>
+        </button>
+        <button class="sign-card" type="button" data-sign="diamond">
+          <span class="sign-visual diamond"><span>!</span></span>
+          <span class="sign-title">Diamond</span>
+          <span class="sign-answer">Upcoming road condition or hazard.</span>
+        </button>
+        <button class="sign-card" type="button" data-sign="circle">
+          <span class="sign-visual circle"><span>R R</span></span>
+          <span class="sign-title">Circle</span>
+          <span class="sign-answer">Upcoming railroad crossing.</span>
+        </button>
+        <button class="sign-card" type="button" data-sign="pennant">
+          <span class="sign-visual pennant"><span>NO PASS</span></span>
+          <span class="sign-title">Pennant</span>
+          <span class="sign-answer">No-passing zone; normally posted on the left side of a two-way road.</span>
+        </button>
+        <button class="sign-card" type="button" data-sign="pentagon">
+          <span class="sign-visual pentagon"><span>SCHOOL</span></span>
+          <span class="sign-title">Five-sided</span>
+          <span class="sign-answer">School area where children may be crossing.</span>
+        </button>
+        <button class="sign-card" type="button" data-sign="rectangle">
+          <span class="sign-visual rectangle"><span>LIMIT</span></span>
+          <span class="sign-title">Rectangle</span>
+          <span class="sign-answer">Often a regulation, route/destination message, or advisory.</span>
+        </button>
+        <button class="sign-card" type="button" data-sign="orange">
+          <span class="sign-visual work-diamond"><span>WORK</span></span>
+          <span class="sign-title">Orange background</span>
+          <span class="sign-answer">Temporary traffic condition, usually construction or maintenance.</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="section shell" id="reference">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">03 · Quick reference</p>
+          <h2>Numbers worth memorizing</h2>
+        </div>
+        <p>These are high-value recall items from the current Indiana Driver's Manual. Posted signs still control when they differ.</p>
+      </div>
+
+      <div class="reference-table-wrap">
+        <table class="reference-table">
+          <thead>
+            <tr><th>Situation</th><th>Indiana manual guidance</th><th>Memory cue</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Rural interstate · passenger vehicle</td><td>70 mph maximum or posted limit</td><td><span class="number">70</span> open interstate</td></tr>
+            <tr><td>Rural state divided highway</td><td>60 mph maximum or posted limit</td><td><span class="number">60</span> divided state road</td></tr>
+            <tr><td>Most urban residential areas</td><td>30 mph maximum or posted limit</td><td><span class="number">30</span> neighborhood</td></tr>
+            <tr><td>Alleys</td><td>15 mph maximum or posted limit</td><td><span class="number">15</span> alley</td></tr>
+            <tr><td>Normal following gap</td><td>At least 2–3 seconds</td><td><span class="number">2–3</span> seconds</td></tr>
+            <tr><td>Parking near a fire hydrant</td><td>Do not park within 15 feet</td><td><span class="number">15</span> feet</td></tr>
+            <tr><td>Passing a bicyclist</td><td>Allow at least 3 feet when safe to pass</td><td><span class="number">3</span> feet</td></tr>
+            <tr><td>Passing near railroad tracks</td><td>Do not pass another vehicle within 100 feet of a crossing</td><td><span class="number">100</span> feet</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="rule-callouts">
+        <article>
+          <span class="callout-tag">School bus</span>
+          <h3>Red lights + stop arm = stop.</h3>
+          <p>On a roadway divided by a barrier or unimproved median, opposite-direction traffic is not required to stop; traffic moving in the same direction still must.</p>
+        </article>
+        <article>
+          <span class="callout-tag">Disabled vehicle</span>
+          <h3>Move over when you can.</h3>
+          <p>For a disabled stationary vehicle with flashing hazard lights, change lanes away. If you cannot, reduce speed to 10 mph below the posted limit and proceed cautiously.</p>
+        </article>
+        <article>
+          <span class="callout-tag">Railroad</span>
+          <h3>Never enter without room to clear.</h3>
+          <p>Do not begin crossing tracks unless you can fully clear them without stopping. Never drive around a lowered gate.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section practice-section" id="practice">
+      <div class="shell">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">04 · Practice</p>
+            <h2>Indiana permit practice test</h2>
+          </div>
+          <p>This practice set is original and modeled on the subjects listed by the Indiana BMV. It is not the official state exam.</p>
+        </div>
+
+        <div class="quiz-shell">
+          <aside class="quiz-sidebar">
+            <div class="quiz-sidebar-block">
+              <span class="metric-label">Question</span>
+              <strong><span id="questionNumber">1</span> / <span id="questionTotal">20</span></strong>
+            </div>
+            <div class="quiz-sidebar-block">
+              <span class="metric-label">Current section</span>
+              <strong id="questionSection">Signs</strong>
+            </div>
+            <div class="quiz-sidebar-block">
+              <span class="metric-label">Answered</span>
+              <strong id="answeredCount">0</strong>
+            </div>
+            <div class="quiz-progress"><span id="quizProgressBar"></span></div>
+            <button class="quiet-button full" id="restartQuiz" type="button">Restart test</button>
+          </aside>
+
+          <div class="quiz-main">
+            <div id="quizView">
+              <p class="question-label" id="questionLabel">SIGN RECOGNITION</p>
+              <h3 id="questionText">Loading question…</h3>
+              <div class="answers" id="answers"></div>
+              <div class="explanation" id="explanation" hidden></div>
+              <div class="quiz-controls">
+                <button class="button secondary" id="prevQuestion" type="button">Previous</button>
+                <button class="button primary" id="nextQuestion" type="button">Next question</button>
+              </div>
+            </div>
+
+            <div class="results" id="resultsView" hidden>
+              <p class="eyebrow">Practice complete</p>
+              <h3 id="resultHeadline">Results</h3>
+              <div class="result-grid">
+                <div><span>Overall</span><strong id="overallResult">—</strong></div>
+                <div><span>Signs</span><strong id="signResult">—</strong></div>
+                <div><span>Traffic rules</span><strong id="rulesResult">—</strong></div>
+              </div>
+              <p id="resultMessage"></p>
+              <div class="quiz-controls result-controls">
+                <button class="button primary" id="retakeQuiz" type="button">Retake test</button>
+                <a class="button secondary" href="#study">Review modules</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="official shell">
+      <div>
+        <p class="eyebrow">Official source</p>
+        <h2>Use this page to study. Use the BMV to verify.</h2>
+      </div>
+      <p>The Indiana BMV notes that its electronic Driver's Manual is the most up-to-date version. Recheck the official manual before taking your exam, especially if laws or testing procedures change.</p>
+      <div class="official-links">
+        <a class="button secondary" href="https://www.in.gov/bmv/licenses-permits-ids/learners-permits-and-drivers-licenses-overview/learners-permit/drivers-manual/" target="_blank" rel="noopener">Indiana Driver's Manual ↗</a>
+        <a class="button secondary" href="https://www.in.gov/bmv/licenses-permits-ids/learners-permits-and-drivers-licenses-overview/learners-permit/knowledge-exam" target="_blank" rel="noopener">Knowledge Exam ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <span>Indiana Permit Study Desk</span>
+      <span>Independent study resource · Not affiliated with the Indiana BMV</span>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
